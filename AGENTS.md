@@ -5,6 +5,7 @@ This document outlines how to use AI agents and automation for managing the `abu
 ## Overview
 
 The `abuxton/tap` repository is a custom Homebrew tap for distributing software formulas. Agents can help with:
+
 - Formula creation and updates
 - Dependency management
 - Testing and validation
@@ -16,37 +17,38 @@ The `abuxton/tap` repository is a custom Homebrew tap for distributing software 
 
 An agent should follow these steps when creating a new formula:
 
-1. **Understand the software requirements**
+1. Understand the software requirements
    - Get the software's homepage URL
    - Identify supported platforms (macOS Intel/ARM, Linux)
    - Determine available binary releases
 
-2. **Create the formula file**
+2. Create the formula file
    - Place in `Formula/<name>.rb`
    - Follow Homebrew formula conventions
    - Use frozen string literals: `# frozen_string_literal: true`
    - Include proper class declaration: `class <Name> < Formula`
 
-3. **Define platform-specific URLs**
-   ```ruby
-   if OS.mac? && Hardware::CPU.intel?
-     url '...'
-   end
-   
-   if OS.mac? && Hardware::CPU.arm?
-     url '...'
-   end
-   
-   if OS.linux? && Hardware::CPU.intel?
-     url '...'
-   end
-   ```
+3. Define platform-specific URLs
 
-4. **Add installation and testing**
+```ruby
+if OS.mac? && Hardware::CPU.intel?
+  url '...'
+end
+
+if OS.mac? && Hardware::CPU.arm?
+  url '...'
+end
+
+if OS.linux? && Hardware::CPU.intel?
+  url '...'
+end
+```
+
+4. Add installation and testing
    - Implement `def install` method
    - Add `test do` block to verify functionality
 
-5. **Run validation**
+5. Run validation
    - Execute `brew audit --strict Formula/<name>.rb`
    - Verify Ruby syntax: `ruby -c Formula/<name>.rb`
    - Run pre-commit hooks: `pre-commit run --all-files`
@@ -63,6 +65,7 @@ An agent should follow these steps when creating a new formula:
 ### Pre-commit Hooks
 
 All changes must pass pre-commit validation:
+
 - fasterer: Ruby speed improvements
 - markdownlint: Markdown formatting
 - shellcheck: Shell script validation
@@ -71,6 +74,7 @@ All changes must pass pre-commit validation:
 - reek: Code smells
 
 Run locally before pushing:
+
 ```bash
 pre-commit run --all-files
 ```
@@ -79,9 +83,9 @@ pre-commit run --all-files
 
 Automated checks run on all PRs and pushes to `main`:
 
-1. **pre-commit.yml** - Runs pre-commit hooks
-2. **brew-audit.yml** - Validates formula syntax and audits
-3. **code-quality.yml** - RuboCop, Reek, and Fasterer checks
+- **pre-commit.yml** - Runs pre-commit hooks
+- **brew-audit.yml** - Validates formula syntax and audits
+- **code-quality.yml** - RuboCop, Reek, and Fasterer checks
 
 ## Best Practices
 
@@ -108,6 +112,7 @@ Automated checks run on all PRs and pushes to `main`:
 ## Automation Opportunities
 
 Agents can automate:
+
 - Version bump detection and updates
 - GitHub release monitoring
 - Regular pre-commit config updates
@@ -117,22 +122,23 @@ Agents can automate:
 
 ```
 homebrew-tap/
-├── .github/workflows/          # GitHub Actions workflows
-│   ├── pre-commit.yml
-│   ├── brew-audit.yml
-│   └── code-quality.yml
-├── Formula/                    # Homebrew formulas
-├── .pre-commit-config.yaml     # Pre-commit configuration
-├── .rubocop.yml               # RuboCop configuration
-├── .mdlrc                     # Markdown lint rules
-├── README.md                  # Main documentation
-├── AGENTS.md                  # This file
-└── copilotinstructions.md     # Copilot guidance
+  .github/workflows/
+    pre-commit.yml
+    brew-audit.yml
+    code-quality.yml
+  Formula/
+  .pre-commit-config.yaml
+  .rubocop.yml
+  .mdlrc
+  README.md
+  AGENTS.md
+  copilotinstructions.md
 ```
 
 ## Support
 
 For questions about Homebrew formula development, consult:
-- [Homebrew Formula Cookbook](https://docs.brew.sh/Formula-Cookbook)
-- [Homebrew Tap Documentation](https://docs.brew.sh/Taps)
-- [Ruby Style Guide](https://rubystyle.guide/)
+
+- <https://docs.brew.sh/Formula-Cookbook>
+- <https://docs.brew.sh/Taps>
+- <https://rubystyle.guide/>

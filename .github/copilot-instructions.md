@@ -1,6 +1,8 @@
 # GitHub Copilot Instructions for Homebrew Tap
 
 This file contains instructions for GitHub Copilot when working on the `abuxton/tap` Homebrew repository.
+Refer to the `AGENTS.md` file for guidance on how agents can assist with repository maintenance and formula management. Any content in this file is in addition to that material and should be focused on providing specific coding guidance to Copilot when generating code for this repository.
+
 
 ## Repository Purpose
 
@@ -33,26 +35,27 @@ This is a custom Homebrew tap (`abuxton/tap`) for distributing software formulas
    - Naming: `Formula/<package-name>.rb`
 
 2. **Required Formula Components**
-   ```ruby
-   class <PackageName> < Formula
-     desc 'Short description'
-     homepage 'https://...'
-     version '1.0.0'
-     
-     # Platform-specific URLs
-     if OS.mac?
-       url '...'
-     end
-     
-     def install
-       # Installation logic
-     end
-     
-     test do
-       # Test logic
-     end
-   end
-   ```
+
+```ruby
+class <PackageName> < Formula
+  desc 'Short description'
+  homepage 'https://...'
+  version '1.0.0'
+
+  # Platform-specific URLs
+  if OS.mac?
+    url '...'
+  end
+
+  def install
+    # Installation logic
+  end
+
+  test do
+    # Test logic
+  end
+end
+```
 
 3. **Platform Support**
    - Support macOS Intel and ARM when possible
@@ -84,11 +87,13 @@ All workflows target the `main` branch. Update trigger branches if repository co
 ### Pre-commit Hooks
 
 Before committing changes, ensure all pre-commit hooks pass:
+
 ```bash
 pre-commit run --all-files
 ```
 
 Hooks validate:
+
 - Ruby speed improvements (fasterer)
 - Markdown formatting (markdownlint)
 - Shell script quality (shellcheck)
@@ -99,10 +104,11 @@ Hooks validate:
 ### Testing Formulas
 
 1. **Local Testing**
-   ```bash
-   brew audit --strict Formula/<name>.rb
-   ruby -c Formula/<name>.rb
-   ```
+
+```bash
+brew audit --strict Formula/<name>.rb
+ruby -c Formula/<name>.rb
+```
 
 2. **GitHub Testing**
    - Automated tests run on all PRs
@@ -112,6 +118,7 @@ Hooks validate:
 ### Commit Messages
 
 Use clear, descriptive commit messages:
+
 - Add formula: "Add <name> formula v<version>"
 - Update formula: "Update <name> to v<version>"
 - Remove formula: "Remove <name> formula and all references"
@@ -164,10 +171,10 @@ All work targets the `main` branch for CI/CD workflows.
 
 ## Resources
 
-- [Homebrew Formula Cookbook](https://docs.brew.sh/Formula-Cookbook)
-- [Ruby Style Guide](https://rubystyle.guide/)
-- [Pre-commit Documentation](https://pre-commit.com/)
-- [GitHub Actions Documentation](https://docs.github.com/en/actions)
+- <https://docs.brew.sh/Formula-Cookbook>
+- <https://rubystyle.guide/>
+- <https://pre-commit.com/>
+- <https://docs.github.com/en/actions>
 
 ---
 
