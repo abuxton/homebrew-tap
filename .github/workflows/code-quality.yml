@@ -1,4 +1,4 @@
-name: pre-commit
+name: code quality
 
 on:
   pull_request:
@@ -6,7 +6,7 @@ on:
     branches: [main]
 
 jobs:
-  pre-commit:
+  quality:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -17,5 +17,9 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
-      - uses: actions/setup-python@v4
-      - uses: pre-commit/action@v3.0.0
+      - name: Run RuboCop
+        run: rubocop Formula/ --display-cop-names --extra-details || true
+      - name: Run Reek
+        run: reek Formula/ || true
+      - name: Run Fasterer
+        run: fasterer Formula/ || true

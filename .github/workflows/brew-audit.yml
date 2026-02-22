@@ -1,0 +1,26 @@
+name: brew audit
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+      - name: Run brew audit on formulas
+        run: |
+          for formula in Formula/*.rb; do
+            echo "Auditing $formula..."
+            brew audit --strict "$formula" || exit 1
+          done
+      - name: Run brew formulae syntax check
+        run: |
+          for formula in Formula/*.rb; do
+            echo "Checking syntax of $formula..."
+            ruby -c "$formula" || exit 1
+          done
