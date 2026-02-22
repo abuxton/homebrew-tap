@@ -7,18 +7,10 @@
 # versions of RuboCop, may require this file to be generated again.
 
 # Offense count: 1
-# Configuration parameters: ForbiddenDelimiters.
-# ForbiddenDelimiters: (?-mix:(^|\s)(EO[A-Z]{1}|END)(\s|$))
-Naming/HeredocDelimiterNaming:
-  Exclude:
-    - 'Formula/tfx.rb'
-
-# Offense count: 1
 Style/Documentation:
   Exclude:
     - 'spec/**/*'
     - 'test/**/*'
-    # - 'Formula/tfx.rb'
 
 # Offense count: 7
 # Cop supports --auto-correct.
