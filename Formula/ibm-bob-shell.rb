@@ -10,7 +10,7 @@ class IbmBobShell < Formula
   license :cannot_represent
 
   def install
-    odie "Expected installer script bobshell.sh not found in downloaded source" unless File.exist?("bobshell.sh")
+    odie "Expected installer script bobshell.sh was not found in downloaded source" unless File.exist?("bobshell.sh")
 
     target_script = libexec/"bobshell.sh"
     libexec.install "bobshell.sh"
