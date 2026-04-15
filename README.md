@@ -14,7 +14,12 @@ brew install abuxton/tap/<name>
 
 ## Installing Formulae
 
-Once the tap has been added, use the instructions below to install the software packages you need. You can choose to install either the latest version of the MongoDB Server (recommended), or a specific version if desired.
+Once the tap has been added, use the instructions below to install the software packages you need.
+
+Current formulae include:
+
+- `skillshub`
+- `tf-slate`
 
 ### Installing the Latest formula
 
