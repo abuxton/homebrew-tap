@@ -4,7 +4,7 @@ class IbmBobShell < Formula
   desc "Installs IBM BOB Shell using the official curl installer command"
   homepage "https://bob.ibm.com/download?bob=shell"
   url "https://bob.ibm.com/download/bobshell.sh"
-  version "2026.04.15"
+  version :latest
   sha256 :no_check
   license :cannot_represent
 
