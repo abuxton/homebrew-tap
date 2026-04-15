@@ -9,20 +9,16 @@ class IbmBobShell < Formula
   license :cannot_represent
 
   def install
-    (bin/"ibm-bob-shell").write <<~SH
-      #!/usr/bin/env bash
-      set -euo pipefail
-      tmp_script="$(mktemp "${TMPDIR:-/tmp}/bobshell.XXXXXX.sh")"
-      trap 'rm -f "$tmp_script"' EXIT
-      curl -fsSL https://bob.ibm.com/download/bobshell.sh -o "$tmp_script"
-      bash "$tmp_script"
-    SH
-    chmod 0755, bin/"ibm-bob-shell"
+    installer = Dir["*.sh"].first
+    odie "Unable to find IBM BOB Shell installer script in source archive" if installer.nil?
+
+    libexec.install installer => "bobshell.sh"
+    chmod 0755, libexec/"bobshell.sh"
+    bin.install_symlink libexec/"bobshell.sh" => "ibm-bob-shell"
   end
 
   test do
-    script = bin/"ibm-bob-shell"
-    assert_predicate script, :exist?
-    assert_match "curl -fsSL https://bob.ibm.com/download/bobshell.sh -o \"$tmp_script\"", script.read
+    assert_predicate bin/"ibm-bob-shell", :exist?
+    assert_predicate libexec/"bobshell.sh", :exist?
   end
 end
