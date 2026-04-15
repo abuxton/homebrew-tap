@@ -11,10 +11,6 @@ Naming/FileName:
   Exclude:
     - 'Formula/*.rb'
 
-Style/Documentation:
-  Exclude:
-    - 'Formula/*.rb'
-
 Style/NumericLiteralPrefix:
   Exclude:
     - 'Formula/*.rb'
