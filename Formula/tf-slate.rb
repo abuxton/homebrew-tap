@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Formula for installing tf-slate from source.
 class TfSlate < Formula
   desc "Discover and summarize local Terraform state files"
   homepage "https://github.com/abuxton/tf-slate"
