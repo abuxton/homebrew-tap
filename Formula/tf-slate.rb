@@ -5,7 +5,7 @@ class TfSlate < Formula
   homepage "https://github.com/abuxton/tf-slate"
   version "0.0.0-b5ed27c"
   url "https://github.com/abuxton/tf-slate/archive/b5ed27cb440eb83080205193d61286181acbcdae.tar.gz"
-  sha256 "b527f1229f2e51ed6c965a96cae07d11e06c60b6ba12847e9f0a2ebb50dbc432"
+  sha256 "9c73aa53d25387cd1912236f924e9b1e7d5725ed8fedf036cc2c770724bdafc6"
   license "MIT"
 
   depends_on "go" => :build
