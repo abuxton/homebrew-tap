@@ -11,12 +11,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@master
+        uses: Homebrew/actions/setup-homebrew@main
       - name: Run brew audit on formulas
         run: |
           for formula in Formula/*.rb; do
-            echo "Auditing $formula..."
-            brew audit --strict "$formula" || exit 1
+            name="$(basename "$formula" .rb)"
+            echo "Auditing $name (from $formula)..."
+            brew audit --strict "$name" || exit 1
           done
       - name: Run brew formulae syntax check
         run: |
