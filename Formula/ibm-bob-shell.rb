@@ -10,7 +10,7 @@ class IbmBobShell < Formula
 
   def install
     installer = Dir["*.sh"].first
-    odie "Unable to find IBM BOB Shell installer script in source archive" if installer.nil?
+    odie "Unable to find IBM BOB Shell installer script in downloaded source" if installer.nil?
 
     libexec.install installer => "bobshell.sh"
     chmod 0755, libexec/"bobshell.sh"
