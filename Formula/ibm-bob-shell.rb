@@ -21,7 +21,7 @@ class IbmBobShell < Formula
   test do
     assert_predicate bin/"ibm-bob-shell", :exist?
     assert_predicate bin/"ibm-bob-shell", :symlink?
-    assert_equal (libexec/"bobshell.sh").to_s, (bin/"ibm-bob-shell").readlink.to_s
+    assert_equal libexec/"bobshell.sh", (bin/"ibm-bob-shell").readlink
     assert_predicate libexec/"bobshell.sh", :exist?
     assert_predicate libexec/"bobshell.sh", :executable?
   end

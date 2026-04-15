@@ -16,4 +16,4 @@ Style/NumericLiteralPrefix:
     - 'Formula/*.rb'
 
 Style/StringLiterals:
-  Enabled: false
+  EnforcedStyle: double_quotes
