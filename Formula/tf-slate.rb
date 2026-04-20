@@ -4,9 +4,9 @@
 class TfSlate < Formula
   desc "Discover and summarize local Terraform state files"
   homepage "https://github.com/abuxton/tf-slate"
-  version "0.0.0-b5ed27c"
-  url "https://github.com/abuxton/tf-slate/archive/b5ed27cb440eb83080205193d61286181acbcdae.tar.gz"
-  sha256 "9c73aa53d25387cd1912236f924e9b1e7d5725ed8fedf036cc2c770724bdafc6"
+  version "0.1.0"
+  url "https://github.com/abuxton/tf-slate/archive/refs/tags/v0.1.0.tar.gz"
+  sha256 "0360ea186c8ee326acce03b1b2036cdcbdde40dd68678168f302e52837e8594b"
   license "MIT"
 
   depends_on "go" => :build
