@@ -1,5 +1,19 @@
 inherit_from: .rubocop_todo.yml
 
-Style/StringLiterals:
+AllCops:
+  NewCops: pending
+
+Layout/SpaceAroundOperators:
   Exclude:
-    - "Formula/**/*.rb"
+    - 'Formula/*.rb'
+
+Naming/FileName:
+  Exclude:
+    - 'Formula/*.rb'
+
+Style/NumericLiteralPrefix:
+  Exclude:
+    - 'Formula/*.rb'
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes

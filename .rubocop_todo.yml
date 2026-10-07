@@ -14,7 +14,7 @@ Style/Documentation:
 
 # Offense count: 7
 # Cop supports --auto-correct.
-# Configuration parameters: AutoCorrect, AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
+# Configuration parameters: AutoCorrect, AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, AllowedPatterns.
 # URISchemes: http, https
 Layout/LineLength:
-    IgnoredPatterns: ['\A#','sha256','url']
+    AllowedPatterns: ['\A#','sha256','url']
