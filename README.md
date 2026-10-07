@@ -16,6 +16,20 @@ brew install abuxton/tap/<name>
 
 Once the tap has been added, use the instructions below to install the software packages you need. You can choose to install either the latest version of the MongoDB Server (recommended), or a specific version if desired.
 
+### OpenSRE
+
+Install the OpenSRE CLI:
+
+```shell
+brew install abuxton/tap/opensre
+```
+
+Then start OpenSRE:
+
+```shell
+opensre
+```
+
 ### Installing the Latest formula
 
 Thanks to <https://stackoverflow.com/a/68569754/2362673>
