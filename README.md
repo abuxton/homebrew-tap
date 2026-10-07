@@ -22,6 +22,20 @@ Current formulae include:
 - `skillshub`
 - `tf-slate`
 
+### OpenSRE
+
+Install the OpenSRE CLI:
+
+```shell
+brew install abuxton/tap/opensre
+```
+
+Then start OpenSRE:
+
+```shell
+opensre
+```
+
 ### Installing the Latest formula
 
 Thanks to <https://stackoverflow.com/a/68569754/2362673>
