@@ -36,6 +36,14 @@ Then start OpenSRE:
 opensre
 ```
 
+### Klaw
+
+Install [Klaw](https://klaw.sh), a CLI for AI agent orchestration:
+
+```shell
+brew install abuxton/tap/klaw
+```
+
 ### Installing the Latest formula
 
 Thanks to <https://stackoverflow.com/a/68569754/2362673>
