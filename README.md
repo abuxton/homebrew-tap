@@ -18,7 +18,6 @@ Once the tap has been added, use the instructions below to install the software 
 
 Current formulae include:
 
-- `ibm-bob-shell`
 - `skillshub`
 - `tf-slate`
 
