@@ -18,8 +18,17 @@ Once the tap has been added, use the instructions below to install the software 
 
 Current formulae include:
 
+- `docling`
 - `skillshub`
 - `tf-slate`
+
+### Docling
+
+Install [Docling](https://github.com/docling-project/docling), a document parsing SDK and CLI:
+
+```shell
+brew install abuxton/tap/docling
+```
 
 ### OpenSRE
 
